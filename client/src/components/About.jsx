@@ -42,26 +42,26 @@ export default function About() {
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: 80,
+          gap: '80px',
           alignItems: 'start',
         }}>
           {/* Left */}
           <div>
             <div className="section-label reveal">About Me</div>
-            <h2 className="section-title reveal" style={{ marginBottom: 32, transitionDelay: '0.1s' }}>
+            <h2 className="section-title reveal" style={{ marginBottom: '32px', transitionDelay: '0.1s' }}>
               An engineer who builds<br />
               <em>beyond the brief.</em>
             </h2>
 
             <p className="reveal" style={{
-              color: 'var(--muted)', lineHeight: 1.9, marginBottom: 20, transitionDelay: '0.2s'
+              color: 'var(--muted)', lineHeight: 1.9, marginBottom: '20px', transitionDelay: '0.2s'
             }}>
               I'm <strong style={{ color: 'var(--text)' }}>KT</strong>, founder of Digital Wave IT Solutions Pvt Ltd.
               I build agentic software systems, mobile apps, and scalable platforms
               that don't just execute tasks — they think, adapt, and deliver.
             </p>
             <p className="reveal" style={{
-              color: 'var(--muted)', lineHeight: 1.9, marginBottom: 40, transitionDelay: '0.3s'
+              color: 'var(--muted)', lineHeight: 1.9, marginBottom: '40px', transitionDelay: '0.3s'
             }}>
               From real-time ride-hailing platforms to AI-assisted workflows,
               my work lives at the intersection of autonomy and user experience.
@@ -70,9 +70,13 @@ export default function About() {
 
             {/* Stats */}
             <div className="reveal" style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1,
-              border: '1px solid var(--border)', borderRadius: var(--radius),
-              overflow: 'hidden', transitionDelay: '0.4s',
+              display: 'grid', 
+              gridTemplateColumns: '1fr 1fr', 
+              gap: '1px',
+              border: '1px solid var(--border)', 
+              borderRadius: 'var(--radius)', // Fixed: Added quotes
+              overflow: 'hidden', 
+              transitionDelay: '0.4s',
             }}>
               {STATS.map(({ num, label }, i) => (
                 <div key={label} style={{
@@ -84,7 +88,7 @@ export default function About() {
                   <div style={{
                     fontFamily: 'var(--font-d)', fontSize: '2.5rem',
                     fontWeight: 600, color: 'var(--accent)', lineHeight: 1,
-                    marginBottom: 4,
+                    marginBottom: '4px',
                   }}>{num}</div>
                   <div style={{ fontSize: 11, color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                     {label}
@@ -98,23 +102,24 @@ export default function About() {
           <div>
             {/* Photo placeholder / visual */}
             <div className="reveal" style={{
-              width: '100%', aspectRatio: '4/5',
+              width: '100%', 
+              aspectRatio: '4/5',
               background: 'var(--bg)',
               border: '1px solid var(--border)',
-              borderRadius: var(--radius),
-              marginBottom: 32,
-              position: 'relative', overflow: 'hidden',
+              borderRadius: 'var(--radius)', // Fixed: Added quotes
+              marginBottom: '32px',
+              position: 'relative', 
+              overflow: 'hidden',
               transitionDelay: '0.15s',
             }}>
-              {/* Replace this with your actual photo: <img src="/photo.jpg" style={{width:'100%',height:'100%',objectFit:'cover'}} /> */}
               <div style={{
                 position: 'absolute', inset: 0,
                 display: 'flex', flexDirection: 'column',
                 alignItems: 'center', justifyContent: 'center',
-                gap: 12,
+                gap: '12px',
               }}>
                 <div style={{
-                  width: 80, height: 80, borderRadius: '50%',
+                  width: '80px', height: '80px', borderRadius: '50%',
                   background: 'var(--bg3)', border: '2px solid var(--accent)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-d)', fontSize: '2rem',
@@ -127,7 +132,7 @@ export default function About() {
               {/* Orange corner accent */}
               <div style={{
                 position: 'absolute', bottom: 0, right: 0,
-                width: 120, height: 120,
+                width: '120px', height: '120px',
                 background: 'radial-gradient(circle at bottom right, rgba(255,107,43,0.15), transparent)',
               }} />
             </div>
@@ -137,16 +142,16 @@ export default function About() {
               <div style={{
                 fontFamily: 'var(--font-m)', fontSize: 11,
                 letterSpacing: '0.2em', color: 'var(--muted)',
-                textTransform: 'uppercase', marginBottom: 14,
+                textTransform: 'uppercase', marginBottom: '14px',
               }}>Tech Stack</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {STACKS.map(({ name, color }) => (
                   <div key={name} style={{
-                    display: 'flex', alignItems: 'center', gap: 6,
+                    display: 'flex', alignItems: 'center', gap: '6px',
                     padding: '6px 12px',
                     background: 'var(--bg)',
                     border: '1px solid var(--border)',
-                    borderRadius: 4,
+                    borderRadius: '4px',
                     fontSize: 12, color: 'var(--muted)',
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
@@ -159,7 +164,7 @@ export default function About() {
                       e.currentTarget.style.color = 'var(--muted)'
                     }}
                   >
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: color, flexShrink: 0 }} />
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: color, flexShrink: 0 }} />
                     {name}
                   </div>
                 ))}

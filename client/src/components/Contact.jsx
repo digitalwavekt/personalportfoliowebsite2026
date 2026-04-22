@@ -70,8 +70,8 @@ export default function Contact() {
 
             {/* Contact details */}
             {[
-              { icon: Mail,    text: 'kt@digitalwave.in',   href: 'mailto:kt@digitalwave.in' },
-              { icon: Phone,   text: '+91 98765 XXXXX',      href: 'tel:+919876500000'         },
+              { icon: Mail,    text: 'contact@digitalwaveitsolutions.com',   href: 'mailto:contact@digitalwaveitsolutions.com' },
+              { icon: Phone,   text: '+91-9549145596',      href: 'tel:+919549145596'         },
               { icon: MapPin,  text: 'Jaipur, Rajasthan, India', href: null                   },
             ].map(({ icon: Icon, text, href }) => (
               <div key={text} style={{
