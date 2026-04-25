@@ -10,6 +10,11 @@ import projectRoutes from './routes/projects.js'
 import contactRoutes from './routes/contact.js'
 import ratingRoutes  from './routes/ratings.js'
 
+process.on('uncaughtException', err => {
+  console.error('UNCAUGHT:', err.message)
+  process.exit(1)
+})
+
 dotenv.config()
 
 const app  = express()
@@ -44,20 +49,21 @@ app.use('/api/ratings',  ratingRoutes)
 app.get('/api/health', (_, res) => res.json({ status: 'ok', timestamp: new Date() }))
 
 // ── Serve React build in production ──────────────────────────────────────────
-/*if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   const clientDist = join(__dirname, '../client/dist')
   app.use(express.static(clientDist))
   app.get('*', (_, res) => res.sendFile(join(clientDist, 'index.html')))
-}*/
+}
 
 // ── MongoDB connect ───────────────────────────────────────────────────────────
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅  MongoDB connected')
-    app.listen(PORT, () => console.log(`🚀  Server running on http://localhost:${PORT}`))
+    app.listen(PORT, () => console.log(`🚀  Server running on port ${PORT}`))
   })
   .catch(err => {
     console.error('❌  MongoDB connection failed:', err.message)
+    console.error('MONGO_URI set?', !!process.env.MONGO_URI)
     process.exit(1)
   })
 
