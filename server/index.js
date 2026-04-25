@@ -24,9 +24,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
   origin: [
-    process.env.CLIENT_URL || 'http://localhost:5173',
-    'http://localhost:4173',
+    'https://newcreation-alpha.vercel.app', // ✅ your frontend
+    'http://localhost:5173'
   ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }))
 
