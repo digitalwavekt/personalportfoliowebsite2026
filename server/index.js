@@ -44,11 +44,11 @@ app.use('/api/ratings',  ratingRoutes)
 app.get('/api/health', (_, res) => res.json({ status: 'ok', timestamp: new Date() }))
 
 // ── Serve React build in production ──────────────────────────────────────────
-if (process.env.NODE_ENV === 'production') {
+/*if (process.env.NODE_ENV === 'production') {
   const clientDist = join(__dirname, '../client/dist')
   app.use(express.static(clientDist))
   app.get('*', (_, res) => res.sendFile(join(clientDist, 'index.html')))
-}
+}*/
 
 // ── MongoDB connect ───────────────────────────────────────────────────────────
 mongoose.connect(process.env.MONGO_URI)
