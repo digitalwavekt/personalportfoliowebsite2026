@@ -24,12 +24,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
   origin: [
-    'https://newcreation-alpha.vercel.app', // ✅ your frontend
+    'https://newcreation-alpha.vercel.app',
     'http://localhost:5173'
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }))
+app.options('*', cors())
 
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true }))
